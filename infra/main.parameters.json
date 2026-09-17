@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": {
+      "value": "nightscout-prod-aeee"
+    },
+    "location": {
+      "value": "westeurope"
+    },
+    "sessionId": {
+      "value": "aeee254c-4b8c-4edf-8264-cd2e714187ae"
+    },
+    "deployedBy": {
+      "value": "Dinis Garcia Nunes"
+    },
+    "createdAt": {
+      "value": "2026-09-17T13:07:08.864+01:00"
+    }
+  }
+}
