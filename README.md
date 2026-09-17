@@ -171,11 +171,12 @@ $ npm install
 
 ## Installation notes for Microsoft Azure, Windows:
 
-- If deploying the software to Microsoft Azure, you must set ** in the app settings for *WEBSITE_NODE_DEFAULT_VERSION* and *SCM_COMMAND_IDLE_TIMEOUT* **before** you deploy the latest Nightscout or the site deployment will likely fail. Other hosting environments do not require this setting. Additionally, if using the Azure free hosting tier, the installation might fail due to resource constraints imposed by Azure on the free hosting. Please set the following settings to the environment in Azure:
+- If deploying the software to Microsoft Azure, you must set `WEBSITE_NODE_DEFAULT_VERSION` and `SCM_COMMAND_IDLE_TIMEOUT` in the app settings **before** you deploy the latest Nightscout or the site deployment will likely fail. Other hosting environments do not require these settings. Additionally, if using the Azure free hosting tier, the installation might fail due to resource constraints imposed by Azure on the free hosting. Please set the following settings in Azure:
 ```
-WEBSITE_NODE_DEFAULT_VERSION=16.16.0
-SCM_COMMAND_IDLE_TIMEOUT=300
+WEBSITE_NODE_DEFAULT_VERSION=~22
+SCM_COMMAND_IDLE_TIMEOUT=600
 ```
+- For an existing App Service, `azure-app-settings.example.json` contains a non-secret baseline that enables Night Mode and recommended browser security headers. Add the values through **App Service > Settings > Environment variables**. Keep `MONGODB_URI`, `API_SECRET`, and integration credentials only in App Service settings; never add them to this repository.
 - See [install MongoDB, Node.js, and Nightscouton a single Windows system](https://github.com/jaylagorio/Nightscout-on-Windows-Server). if you want to host your Nightscout outside of the cloud. Although the instructions are intended for Windows Server the procedure is compatible with client versions of Windows such as Windows 7 and Windows 10.
 - If you deploy to Windows and want to develop or test you need to install [Cygwin](https://www.cygwin.com/) (use [setup-x86_64.exe](https://www.cygwin.com/setup-x86_64.exe) and make sure to install `build-essential` package. Test your configuration by executing `make` and check if all tests are ok.
 

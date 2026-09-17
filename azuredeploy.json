@@ -38,7 +38,7 @@
       "type": "string"
     },
     "mongoConnection": {
-      "type": "string"
+      "type": "secureString"
     },
     "mongoCollection": {
       "type": "string",
@@ -53,9 +53,8 @@
       "defaultValue": "mg/dl"
     },
     "apiSecret": {
-      "type": "string",
-      "minLength": "12",
-      "defaultValue": "Enter an API secret. Must be at least 12 characters"
+      "type": "secureString",
+      "minLength": 12
     },
     "theme": {
       "type": "string",
@@ -181,7 +180,7 @@
         "on",
         "off"
       ],
-      "defaultValue": "off"
+      "defaultValue": "on"
     },
     "show_plugins": {
       "type": "string",
@@ -214,11 +213,16 @@
     },
     "auth_default_roles": {
       "type": "string",
-      "defaultValue": "readable devicestatus-upload"
+      "allowedValues": [
+        "readable",
+        "denied",
+        "status-only"
+      ],
+      "defaultValue": "readable"
     },
     "WEBSITE_NODE_DEFAULT_VERSION": {
         "type": "string",
-        "defaultValue": "16.16.0"
+        "defaultValue": "~22"
     }
   },
   "resources": [{
@@ -246,7 +250,7 @@
       "serverFarmId": "[parameters('hostingPlanName')]",
       "siteConfig": {
         "appSettings": [{
-            "name": "MONGO_CONNECTION",
+            "name": "MONGODB_URI",
             "value": "[parameters('mongoConnection')]"
           }, 
             {
@@ -316,11 +320,29 @@
             "name": "AUTH_DEFAULT_ROLES",
             "value": "[parameters('auth_default_roles')]"
           }, {
+            "name": "SECURE_CSP",
+            "value": "true"
+          }, {
+            "name": "SECURE_CSP_REPORT_ONLY",
+            "value": "false"
+          }, {
+            "name": "ALLOW_UNRESTRICTED_FRAME_EMBEDDING",
+            "value": "false"
+          }, {
+            "name": "INSECURE_USE_HTTP",
+            "value": "false"
+          }, {
+            "name": "SECURE_HSTS_HEADER",
+            "value": "true"
+          }, {
+            "name": "NODE_ENV",
+            "value": "production"
+          }, {
             "name": "WEBSITE_NODE_DEFAULT_VERSION",
-            "value": "8.11.1"
+            "value": "[parameters('WEBSITE_NODE_DEFAULT_VERSION')]"
           }, {
             "name": "SCM_COMMAND_IDLE_TIMEOUT",
-            "value": "300"
+            "value": "600"
           }
 
         ]

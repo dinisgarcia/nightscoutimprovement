@@ -1,0 +1,62 @@
+[
+  {
+    "name": "WEBSITE_NODE_DEFAULT_VERSION",
+    "value": "~22",
+    "slotSetting": false
+  },
+  {
+    "name": "SCM_COMMAND_IDLE_TIMEOUT",
+    "value": "600",
+    "slotSetting": false
+  },
+  {
+    "name": "NODE_ENV",
+    "value": "production",
+    "slotSetting": false
+  },
+  {
+    "name": "NIGHT_MODE",
+    "value": "on",
+    "slotSetting": false
+  },
+  {
+    "name": "THEME",
+    "value": "default",
+    "slotSetting": false
+  },
+  {
+    "name": "SHOW_PLUGINS",
+    "value": "delta direction timeago iob cob basal cage sage",
+    "slotSetting": false
+  },
+  {
+    "name": "AUTH_DEFAULT_ROLES",
+    "value": "readable",
+    "slotSetting": false
+  },
+  {
+    "name": "INSECURE_USE_HTTP",
+    "value": "false",
+    "slotSetting": false
+  },
+  {
+    "name": "SECURE_HSTS_HEADER",
+    "value": "true",
+    "slotSetting": false
+  },
+  {
+    "name": "SECURE_CSP",
+    "value": "true",
+    "slotSetting": false
+  },
+  {
+    "name": "SECURE_CSP_REPORT_ONLY",
+    "value": "false",
+    "slotSetting": false
+  },
+  {
+    "name": "ALLOW_UNRESTRICTED_FRAME_EMBEDDING",
+    "value": "false",
+    "slotSetting": false
+  }
+]
