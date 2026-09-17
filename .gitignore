@@ -43,3 +43,4 @@ letsencrypt/
 stats.json
 .replit
 attached_assets/
+.copilot-azure/
